@@ -35,4 +35,6 @@ jobs:
         run: yarn install
 
       - name: Deploy
-        run: yarn deploy:gh-sub
+        run: yarn deploy:gh-sub -- -u "github-actions-bot <support+actions@github.com>"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
