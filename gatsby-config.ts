@@ -20,6 +20,8 @@ export const siteMetadata = {
   defaultMetaImage: '/images/meta-default.png', // Path to the image placed in the 'static' folder
 };
 
+export const pathPrefix = '/web3-garden';
+
 export const plugins = [
   `gatsby-plugin-react-helmet`,
   `gatsby-plugin-catch-links`,
