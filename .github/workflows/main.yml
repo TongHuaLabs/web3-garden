@@ -13,10 +13,12 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+        with:
+          submodules: true
+          lfs: true
 
       - name: Pull & update submodules recursively
         run: |
-          git submodule update --init --recursive
           git submodule update --recursive --remote
 
       - name: Commit & push changes
