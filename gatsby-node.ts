@@ -328,6 +328,12 @@ export const onCreateNode: GatsbyNode['onCreateNode'] = async ({
     // git author time
     const command = `git -C src/garden log -1 --pretty=format:%aI "${node.fileAbsolutePath}"`;
     const gitAuthorTime = execSync(command).toString();
+    console.log(
+      execSync(
+        `git -C src/garden log -1 "${node.fileAbsolutePath}"`,
+      ).toString(),
+    );
+    console.log(`${node.fileAbsolutePath}:`, gitAuthorTime);
     actions.createNodeField({
       node,
       name: 'gitAuthorTime',
